@@ -14,9 +14,19 @@ export class DataStorageService {
 
   getRecipes() {
     this.http.get('https://ng-recipe-book-e7bd2.firebaseio.com/recipes.json')
-      .subscribe(
+      .map(
         (response: Response) => {
           const recipes: Recipe[] = response.json();
+          for (let recipe of recipes) {
+            if (!recipe['ingredients']) {
+              recipes['ingredients'] = [];
+            }
+          }
+          return recipes;
+        }
+      )
+      .subscribe(
+        (recipes: Recipe[]) => {
           this.recipeService.setRecipes(recipes);
         }
       );
