@@ -1,4 +1,4 @@
-import { Action } form '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 export const SIGNUP = 'SIGNUP';
 export const SIGNIN = 'SIGNIN';
