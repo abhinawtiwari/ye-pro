@@ -3,14 +3,12 @@ import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/commo
 
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { AuthService } from '../auth/auth.service';
 import 'rxjs/Rx';
 
 @Injectable()
 export class DataStorageService {
   constructor(private httpClient: HttpClient,
-              private recipeService: RecipeService,
-              private authService: AuthService) {}
+              private recipeService: RecipeService) {}
 
   storeRecipes() {
     //const headers = new HttpHeaders().set('Authorization', 'Bearer afdfdafdfdd')
