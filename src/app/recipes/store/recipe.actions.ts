@@ -36,7 +36,7 @@ export class StoreRecipes implements Action {
     readonly type = STORE_RECIPES;
 }
 
-export class FetchRecipes implements Aciton {
+export class FetchRecipes implements Action {
     readonly type = FETCH_RECIPES;
 }
 
